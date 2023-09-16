@@ -1,0 +1,9 @@
+
+- name: first play-book
+  hosts: web
+  gather_facts: false 
+  tasks:
+  - name: update cache task 
+    yum:
+      update_cache: true
+      state: present

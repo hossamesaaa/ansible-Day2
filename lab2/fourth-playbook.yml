@@ -1,0 +1,14 @@
+
+- name: fourth play-book
+  hosts: web
+  vars:
+    package_name: httpd
+    package_version: latest    
+  tasks:
+
+  - name: install httpd
+    yum:
+      name: "{{ package_name }}"
+      state: "{{ package_version }}"
+
+     

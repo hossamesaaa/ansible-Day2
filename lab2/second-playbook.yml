@@ -1,0 +1,22 @@
+
+- name: second play-book
+  hosts: web
+  gather_facts: false 
+  tasks:
+  - name: install nginx
+    yum:
+      name: nginx
+      update_cache: true
+      state: present
+
+  - name: copy index file 
+    copy:
+     src: ./index.html
+     dest: /usr/share/nginx/html
+
+  - name: Restart nginx
+    service:
+     name: nginx
+     enabled: yes
+     state: restarted
+     

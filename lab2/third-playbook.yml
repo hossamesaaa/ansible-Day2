@@ -1,0 +1,24 @@
+
+- name: third play-book
+  hosts: web
+  gather_facts: false 
+  tasks:
+  - name: update yum cache
+    tags: update
+    yum:
+      update_cache: true
+
+  - name: install nginx
+    tags: install
+    yum:
+      name: nginx
+      state: present
+  
+
+  - name: Restart nginx
+    tags: always
+    service:
+     name: nginx
+     enabled: yes
+     state: restarted
+     

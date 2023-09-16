@@ -1,7 +1,7 @@
 
 
 [web]
-192.168.174.130
+192.168.174.130 package_name=vim package_version=latest
 
 [db]
 192.168.174.131
